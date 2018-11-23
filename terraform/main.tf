@@ -80,12 +80,6 @@ resource "aws_security_group" "DB-Secgroup"
 }
 
 
-resource "aws_key_pair" "wordpress-KP"
-  {
-    key_name = "wordpress"
-    public_key = "${file("${var.ssh_key}")}"
-
-  }
 
 
 resource "aws_instance" "wordpress"
@@ -96,7 +90,7 @@ resource "aws_instance" "wordpress"
   associate_public_ip_address = "true"
   subnet_id = "${aws_subnet.public_subnet.id}"
   vpc_security_group_ids = ["${aws_security_group.TerraSecGrp.id}"]
-  key_name = "${aws_key_pair.wordpress-KP.id}"
+ # key_name = "${aws_key_pair.wordpress-KP.id}"
   tags
   {
     Name = "Wordpress through terrafrom"
@@ -104,7 +98,7 @@ resource "aws_instance" "wordpress"
     Application = "Wordpress"
     Created = "This instance is created through terraform"
   }
-  user_data = "${file("/home/ubuntu/terraform/two-tier-architecture/install.sh")}"
+ # user_data = "${file("/home/ubuntu/terraform/two-tier-architecture/install.sh")}"
 
 }
 

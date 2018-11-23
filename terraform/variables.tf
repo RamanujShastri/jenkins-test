@@ -22,8 +22,3 @@ variable "public_subnet_cidr"
   default = "10.20.20.0/24"
 }
 
-variable "ssh_key"
-{
-  description = "SSH key for wordpress instance"
-  default = "/home/ubuntu/.ssh/id_rsa.pub"
-}
