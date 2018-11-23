@@ -1,4 +1,4 @@
 #!/bin/bash
 cd terraform
-terraform init
-terraform plan
+sudo terraform init
+sudo terraform plan
