@@ -7,6 +7,6 @@ node
     }
     stage('Build'){
         echo 'Build'
-        sh './run.sh'
+        sh 'bash run.sh'
     }
 }
