@@ -1,8 +1,11 @@
 node
 {
     stage('GetParameters'){
+        List props = []
         List params = [
         string(name: 'PROJECT_NAME', description: 'Please Enter the name of the project.')
+        props << parameters(params)
+        properties(props)   
         ]
     }
     stage('Checkout'){
