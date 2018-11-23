@@ -106,7 +106,7 @@ resource "aws_instance" "wordpress"
 resource "aws_instance" "dbinstance"
 {
   ami = "ami-8d948ced"
-  depends_on = ["aws_security_group.TerraSecGrp","aws_key_pair.wordpress-KP"]
+  depends_on = ["aws_security_group.TerraSecGrp"]
   instance_type = "t2.micro"
   associate_public_ip_address = "false"
   subnet_id = "${aws_subnet.private_subnet.id}"
