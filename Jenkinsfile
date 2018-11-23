@@ -3,7 +3,7 @@ node
     stage('GetParameters'){
         List props = []
         List params = [
-        string(name: 'Access_key', description: 'Please Enter the AWS Access Key.')
+        string(name: 'Access_key', description: 'Please Enter the AWS Access Key.'),
         string(name: 'Secret_key', description: 'Please Enter the AWS Secret Key.')
         ]
         props << parameters(params)
