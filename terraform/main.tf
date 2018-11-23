@@ -85,7 +85,7 @@ resource "aws_security_group" "DB-Secgroup"
 resource "aws_instance" "wordpress"
 {
   ami = "ami-8d948ced"
-  depends_on = ["aws_security_group.TerraSecGrp","aws_key_pair.wordpress-KP"]
+  depends_on = ["aws_security_group.TerraSecGrp"]
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
   subnet_id = "${aws_subnet.public_subnet.id}"
@@ -111,7 +111,7 @@ resource "aws_instance" "dbinstance"
   associate_public_ip_address = "false"
   subnet_id = "${aws_subnet.private_subnet.id}"
   vpc_security_group_ids = ["${aws_security_group.DB-Secgroup.id}"]
-  key_name = "${aws_key_pair.wordpress-KP.id}"
+  #key_name = "${aws_key_pair.wordpress-KP.id}"
   tags
   {
     Name = "DB instance through terrafrom"
