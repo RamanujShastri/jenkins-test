@@ -10,5 +10,4 @@ node
         echo 'Creating Two Tier Architecture'
         ./run.sh
     }
-
 }
