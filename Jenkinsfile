@@ -6,6 +6,7 @@ node
     stage('GetParameters'){
         echo "Get parameters"
         
+        
     }
     stage('Checkout'){
         echo 'Checkout Branch'
