@@ -4,6 +4,7 @@ node
 {
     stage('GetParameters'){
         echo "Get parameters"
+        sh 'echo uname=$awscredentials'
         
         
     }
