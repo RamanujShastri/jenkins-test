@@ -1,6 +1,5 @@
 properties([parameters([credentials(credentialType: 'com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl', defaultValue: '', description: '', name: 'aws-credentials', required: false)])])
-echo %awscredentials%
-echo %aws-credentials%
+
 node
 {
     stage('GetParameters'){
